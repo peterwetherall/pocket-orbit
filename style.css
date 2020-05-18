@@ -1,0 +1,150 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: right;
+}
+*, *:focus {
+	user-select: none;
+	-moz-user-select: none;
+	outline: none;
+}
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.hidden {
+   display: none;
+}
+#massSlider {
+	-webkit-appearance: none;
+	position: fixed;
+	z-index: 20;
+	bottom: -75px;
+	right: 0;
+	margin: 30px;
+	width: calc(100% - 60px);
+	max-width: 200px;
+	height: 5px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.3);
+	transition: bottom 0.25s;
+}
+#massSlider.active {
+	bottom: 0;
+}
+#massSlider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	border: 0;
+	background: url(images/comet.png);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+#massSlider::-moz-range-thumb {
+	border: 0;
+	background: url(images/comet.png);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+img {
+	user-drag: none;
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+}
+.sprites {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	margin: 0;
+	padding: 0;
+}
+.sprites div {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+}
+.sprites div:after {
+content: " ";
+position: absolute;
+top: -2px;
+left: -2px;
+width: 100%;
+height: 100%;
+border: 2px solid rgba(255,255,255,0);
+border-radius: 100%;
+}
+.sprites div.white-hover:not(#truc-0):hover:after {
+border: 2px solid rgba(255,255,255,1);
+}
+.menu-item {
+	position: relative;
+	z-index: 20;
+	display: inline-block;
+	width: 40px;
+	border-radius: 15px;
+	height: 40px;
+	padding: 10px;
+	margin: 10px 10px 10px 0;
+	background: #333333;
+	border: solid 2px rgba(0, 0, 0, 0);
+	transition: border 0.5s;
+}
+.menu-item {
+	cursor: pointer;
+}
+.menu-item:not(.active):hover {
+	border: solid 2px rgba(255, 255, 255, 0.5);
+}
+.menu-item.active {
+	border: solid 2px rgba(255, 255, 255, 1);
+}
+.closed .menu-item.active {
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+.menu-item img {
+	width: 40px;
+	height: 40px;
+}
+#menu {
+	position: fixed;
+	z-index: 40;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	transition: left 0.5s;
+}
+#menu.closed {
+	left: 100%;
+}
+#zoom {
+	-webkit-appearance: none;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	z-index: 50;
+		height: 5px;
+		border-radius: 5px;
+		background: rgba(255, 255, 255, 0.3);
+	transition: top 0.5s;
+}
+#zoom.active {
+	top: 10px;
+}
+.hidden {
+	display: none;
+}

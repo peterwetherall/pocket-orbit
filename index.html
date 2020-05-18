@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Pocket Orbit</title>
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Pocket Orbit">
+    <link rel="icon" href="images/earth.png">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style id="massSliderThumbs">
+    #massSlider::-webkit-slider-thumb{width:19px;height:19px;}
+    #massSlider::-moz-range-thumb{width:19px;height:19px;}
+    </style>
+</head>
+<body>
+    <canvas id="c" style="background:black;" width="500" height="500"></canvas>
+	<div id="menu" class="closed">
+    	<li class="menu-item" name="comet"><img src="images/comet.png"></li>
+    	<li class="menu-item" name="mercury"><img src="images/mercury.png"></li>
+    	<li class="menu-item" name="venus"><img src="images/venus.png"></li>
+    	<li class="menu-item active" name="earth"><img src="images/earth.png"></li><br>
+    	<li class="menu-item" name="mars"><img src="images/mars.png"></li><br>
+    	<li class="menu-item" name="jupiter"><img src="images/jupiter.png"></li><br>
+    	<li class="menu-item" name="saturn"><img src="images/saturn.png"></li><br>
+    	<li class="menu-item" name="uranus"><img src="images/uranus.png"></li><br>
+    	<li class="menu-item" name="neptune"><img src="images/neptune.png"></li><br>
+    	<!--<li class="menu-item" name="satellite"><img src="images/satellite.png"></li>-->
+		<input type="range" min="1" max="7" step="1" value="4" id="massSlider">
+	</div>
+	<input type="range" min="0.5" value="1" max="1.5" step="0.1" id="zoom" class="active">
+    <div class="sprites"></div>
+<script src="script.js"></script>
+</body>
+</html>
